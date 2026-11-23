@@ -12,7 +12,7 @@ const ENGLISH_WORDS = [
   "motherfucker", "motherfucking", "nigga", "nigger", "piss", "pissed",
   "prick", "pussy", "retard", "retarded", "shit", "shity", "shitty",
   "shithead", "shitting", "slut", "sonofabitch", "son of a bitch", "stfu",
-  "tits", "tranny", "twat", "wanker", "whore", "wtf", "stupid",
+  "tits", "tranny", "twat", "wanker", "whore", "wtf", "stupid"
 ];
 
 const TAGALOG_WORDS = [
