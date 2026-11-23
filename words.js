@@ -12,7 +12,7 @@ const ENGLISH_WORDS = [
   "motherfucker", "motherfucking", "nigga", "nigger", "piss", "pissed",
   "prick", "pussy", "retard", "retarded", "shit", "shity", "shitty",
   "shithead", "shitting", "slut", "sonofabitch", "son of a bitch", "stfu",
-  "tits", "tranny", "twat", "wanker", "whore", "wtf"
+  "tits", "tranny", "twat", "wanker", "whore", "wtf", "stupid",
 ];
 
 const TAGALOG_WORDS = [
@@ -34,7 +34,7 @@ const BISAYA_WORDS = [
   "bugo", "bugok", "bugoka", "buang", "gago", "gaga", "hangak", "hayop", "hinayupak",
   "hudas", "tanga", "tarantado", "ulol", "ungas", "demonyo", "uwagan",
   "sira ulo", "walay utok", "wala kay utok", "kulang sa utok",
-  "iro ka", "baboy ka", "unggoy ka", "baho", "tae",
+  "iro ka", "baboy ka", "unggoy ka", "baho", "tae", "tira", "tira ka", "tira mo", "tira sila", "tira ta", "tira nato",
 
   // Curses
   "yawa", "pisti", "piste", "pesti", "pisting", "piskot", "boyset",
