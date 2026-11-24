@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feedback Shield</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+  <section id="s1" class="screen active" aria-label="Welcome">
+    <p class="brand">FEEDBACK SHIELD</p>
+    <h1>Speak freely.<br>Comment responsibly.</h1>
+    <p class="lead">Your words matter. Check your comment before you post so every word counts.</p>
+
+    <div class="hero" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none" stroke="#67d8f2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M32 6l20 8v16c0 13-8 23-20 28C20 53 12 43 12 30V14l20-8z"/>
+        <path d="M23 32l7 7 12-14"/>
+      </svg>
+    </div>
+
+    <div class="name-field">
+      <label for="userName">Your name</label>
+      <input id="userName" type="text" maxlength="50" placeholder="Type your name here..." autocomplete="off">
+      <p id="nameError" class="name-error" role="alert"></p>
+    </div>
+
+    <div class="spacer"></div>
+    <button class="btn btn-primary" onclick="startApp()">Start</button>
+    <p class="footer-note">Building a safer space for every voice</p>
+  </section>
+
+  <section id="s2" class="screen" aria-label="How it works">
+    <p class="brand">FEEDBACK SHIELD</p>
+    <h1>How to use Feedback Shield</h1>
+    <p class="lead">4 simple steps to thoughtful and responsible posting.</p>
+
+    <ol class="steps">
+      <li class="card">
+        <div class="step-head"><span class="step-title">1. Enter your comment</span><span class="tag">INPUT</span></div>
+        <p class="step-text">Type or paste your message into the text box.</p>
+      </li>
+      <li class="card">
+        <div class="step-head"><span class="step-title">2. Check your comment</span><span class="tag">DETECT</span></div>
+        <p class="step-text">Tap Check Comment to let the detector scan your message.</p>
+      </li>
+      <li class="card">
+        <div class="step-head"><span class="step-title">3. Review the results</span><span class="tag">INSIGHTS</span></div>
+        <p class="step-text">See which words or expressions may need improvement.</p>
+      </li>
+      <li class="card">
+        <div class="step-head"><span class="step-title">4. Revise your message</span><span class="tag">EMPOWER</span></div>
+        <p class="step-text">Edit your comment to make it more respectful and appropriate.</p>
+      </li>
+    </ol>
+
+    <div class="spacer"></div>
+    <button class="btn btn-light" onclick="go(3)">Try the detector</button>
+    <div class="bar">
+      <button class="link" onclick="go(1)">Back</button>
+      <div class="dots" aria-hidden="true"><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+      <span style="min-width:64px"></span>
+    </div>
+  </section>
+
+  <section id="s3" class="screen" aria-label="Comment checker">
+    <p class="brand">FEEDBACK SHIELD</p>
+
+    <div class="card">
+      <h2>Think before you type</h2>
+      <p class="sub">Your words have power.</p>
+
+      <div class="gauge">
+        <div class="gauge-top"><span>Empathy scan gauge</span><span id="gaugeState" class="gauge-state">Ready to scan</span></div>
+        <div class="track"><div id="gaugeFill" class="fill"></div></div>
+      </div>
+
+      <div class="field-label"><span>Tap a sample comment</span></div>
+      <div class="chips">
+        <button class="chip" onclick="useSample('good')">Good word</button>
+        <button class="chip" onclick="useSample('positive')">Positive</button>
+        <button class="chip" onclick="useSample('harmful')">Harmful</button>
+      </div>
+
+      <div class="field-label"><label for="comment">Enter your comment</label><span id="count" class="count">0 / 280</span></div>
+      <textarea id="comment" maxlength="280" placeholder="Type your comment here..."></textarea>
+
+      <button id="checkButton" class="btn btn-blue" onclick="checkMyComment()">Check comment</button>
+
+      <div id="result" class="result" role="status" aria-live="polite"></div>
+
+      <div id="actions" class="stack hidden">
+        <button id="reviseButton" class="btn btn-ghost hidden" style="background:#eef1fa;color:var(--navy-700);border-color:var(--line)" onclick="reviseComment()">Revise comment</button>
+        <button id="continueButton" class="btn btn-primary hidden" onclick="finish()">Continue</button>
+      </div>
+
+      <p class="hint">Choose words that promote respect and kindness.</p>
+    </div>
+
+    <div class="spacer"></div>
+    <div class="bar">
+      <button class="link" onclick="go(2)">Back</button>
+      <div class="dots" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span></div>
+      <span style="min-width:64px"></span>
+    </div>
+  </section>
+
+  <section id="s4" class="screen" aria-label="Thank you">
+    <p class="brand">FEEDBACK SHIELD</p>
+
+    <div class="hero" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none" stroke="#67d8f2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="14" y="28" width="36" height="26" rx="5"/>
+        <path d="M22 28v-7a10 10 0 0 1 20 0v7"/>
+        <circle cx="32" cy="40" r="3"/><path d="M32 43v5"/>
+      </svg>
+    </div>
+
+    <h1>Thank you!</h1>
+    <p id="thanksLead" class="lead">Your words help build a kinder digital space.</p>
+
+    <div class="spacer"></div>
+    <div class="stack">
+      <button class="btn btn-primary" onclick="testAnother()">Test another comment</button>
+      <button class="link" onclick="resetAll()">Return to start</button>
+    </div>
+    <div class="bar" style="justify-content:center">
+      <div class="dots" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span></div>
+    </div>
+  </section>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="words.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
