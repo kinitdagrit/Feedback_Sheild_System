@@ -234,5 +234,3 @@
   }
   .name-field input:focus-visible { outline: 3px solid var(--cyan-300); outline-offset: 2px; }
   .name-error { min-height: 18px; margin: 6px 4px 0; font-size: 13px; font-weight: 600; color: #ffb4a8; }
-
-  .result .note { margin-top: 8px; font-size: 12px; font-weight: 600; opacity: .85; }
